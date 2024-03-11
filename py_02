@@ -1,0 +1,351 @@
+a1 = input("İsim Sorun ... ")
+w = {"ali liste":"gsm : 1268",
+    "sevinç örnek":"gsm : 9245",
+    "yeliz deniz":"gsm : 6149"}
+for i,k in w.items() :
+   if a1.upper() in i.upper() :
+       print("\n")
+       print(i.title(),k.title())
+       print("\n")
+
+*************************************
+
+values = 1,2,3,4,5
+x,y,*z=values # * ile çoklu değer alır.
+print(x,y,z)
+print("\n",x,y,z[1])
+print("\n",x,y,z[0])
+
+**************************************
+
+username = "123Bn"
+password = "a253M"
+us = input("Username ? ")
+ps = input("Password ? ")
+if us == "123Bn" : # İlk "if" bloğu
+  if ps == "a253M" : # İç içe "if"
+    print("\nGiriş Başarılı") 
+  else : # iç içe "if" te çalışan "else"
+    print("Parola Yanlış.")
+else : # İlk "if" bloğuna bağlı "else"
+  print("\nUsername Yanlış.")
+
+  ************************************
+
+  print("\nKilo İndeksi Hesabına Hoşgeldiniz ... ")
+print("\n* Küsuratlı Girişler için '.' ( Nokta ) Kullanın .")
+print("\n* İsim Girişlerinde Büyük / Küçük Harf Ayrımı Yoktur .")
+print("\n* Girişlerden Sonra 'Enter' Tuşuna Basın .")
+i1 = input("\nİsminizi Girin -> ")
+i2 = input("\nSoyisminizi Girin -> ")
+k1 = float(input("\nKilonuzu Girin ( kg Cinsinden ) -> "))
+b1 = float(input("\nBoyunuzu Girin ( cm Cinsinden ) -> "))
+s1 = (k1)/(b1**2)
+print("\n","İndeks Değeri : ",round(s1,3))
+if s1 >= 0 and s1 <= 18.4 :
+  print(f"\n Sayın {i1.title()} {i2.title()}\n\n Kilo İndek Sonucunuz : 'Zayıf'")
+elif s1 >= 18.4 and s1 <= 24.9 :
+  print(f"\n Sayın {i1.title()} {i2.title()}\n\n Kilo İndeks Sonucunuz : 'Normal'")
+elif s1 >= 24.9 and s1 <= 29.9 :
+  print(f"\n Sayın {i1.title()} {i2.title()}\n\n Kilo İndek Sonucunuz : 'Fazla Kilolu'")
+else :
+  print(f"\n Sayın {i1.title()} {i2.title()}\n\n Kilo İndek Sonucunuz : \n\n 'Aşırı Kilolu - Obez'")
+print("\n")
+
+*****************************************
+print("İsim Soyisim Girişi :")
+print("\nGirişlerde Büyük / Küçük Harf Ayrımı Yoktur")
+nm = input("\nİsim Girin -> ")
+sn = input("Soyisim Girin -> ")
+ye = int(input("Yaşınızı Girin -> "))
+print(f"\nSayın {nm.title()} {sn.title()}\n\nLütfen Eğitim Durumunuzu Seçin .")
+sc = int(input("\n(1) İlk Öğretim\n(2) Orta Öğretim\n(3) Lise\n(4) Üniversite\n\nSize Uyan Şıkkı Girin -> "))
+
+if sc == 3 or sc == 4 :
+  if ye >= 18 : # İç içe "if" ***
+    print("\nEhliyet Alabilirsiniz .")
+  else : # İç "if" 'e bağlı ***
+    print("\nEhliyet Alamassınız .")  
+elif sc == 1 or sc == 2 : # İlk "if" ' e bağlı
+  print("\nEhliyet Alamassınız .")
+
+  ******************************************
+
+  y1 = int(input("\n1. Yazılı Notu -> "))
+y2 = int(input("\n2. Yazılı Notu -> "))
+s1 = int(input("\n    Sözlü Notu -> "))
+ort = round((y1+y2+s1)/3)
+if 0<=ort<=24 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 0 ")
+elif 25<=ort<=44 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 1 ")
+elif 45<=ort<=54 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 2 ")
+elif 55<=ort<=69 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 3 ")
+elif 70<=ort<=84 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 4 ")
+elif 85<=ort<=100 :
+  print(f"\n Ortalama : {ort} \n\n Notunuz : 5 ")
+print("\n")
+
+**********************************************
+
+from datetime import date
+print("\n")
+k_yl = int(input("Küçük Yılı Girin -> "))
+k_ay = int(input("Küçük Ayı Girin  -> "))
+k_gn = int(input("Küçük Günü Girin -> "))
+print("\n")
+b_yl = int(input("Büyük Yılı Girin -> "))
+b_ay = int(input("Büyük Ayı Girin  -> "))
+b_gn = int(input("Büyük Günü Girin -> "))
+d0 = date(k_yl,k_ay,k_gn )
+d1 = date(b_yl,b_ay,b_gn)
+delta = d1 - d0
+print("\n")
+print(f"Tarihler Arası Fark : {delta.days} Gün")
+print("\n")
+
+************************************************
+s1 = [1,3,5,7,9,12,19,21]
+for k in s1 :
+  if k%3 == 0 : # 3 e kalansız bölünme ***
+    print(f"\n{k} Sayısı 3 e kalansız bölünür.")
+
+print(sum(s1))
+for tk in s1 :
+  if tk%2 != 0 : # s1 deki tek sayılar
+    print(f"\n{tk} * 2 = {tk*2}")
+    
+ct = ["tmdf","kftmx","lbm","kfhrg"] 
+for v in ct :
+  if len(v) == 4 :
+    print(f"\nListedeki dört karakterli eleman : {v}")
+
+# ard arda gelen sayıları toplamak için :
+t = 0 # döngüden önce tanımla  
+for e in s1 :
+  t = t+e
+print(t)
+
+ur = [
+  {'name':'samsung S6', 'price': '3000' },
+  {'name':'samsung S7', 'price': '4000' },
+  {'name':'samsung S8', 'price': '5000' },
+  {'name':'samsung S9', 'price': '6000' },
+  {'name':'samsung S10', 'price': '7000' }
+]
+t = 0
+for w in ur :
+  t = t + int((w["price"]))
+print(f"\n Ürün Fiyatları Toplamı : {t}")
+
+
+for w in ur :
+   if (int(w["price"])<=5000) :
+     print("\n",w["name"])
+
+*********************************************
+
+# Çift Sayı Bulucu
+# x = 1
+# while x < 10 :
+#   if x%2 == 0 :
+#     print(x)
+#   x = x + 1
+# print("Bitti")
+
+# x = 0
+# while x < 10 :
+#   if x%2 != 0 :
+#     print(f"\nTek Sayı : {x}")
+#   else :
+#     print(f"\nÇift Sayı : {x}")
+#   x = x + 1
+# print("\nBitti")
+
+# Liste Elemanlarını Yazdırma
+# x = 0
+# nm = [1,3,5,7,9,12,19,21]
+# while x < len(nm) :
+#   print(nm[x])
+#   x = x + 1
+
+# İki Sayı Girilecek
+# Bu İki Sayı Arasındaki Tek Sayılar
+# a = int(input("Başlangıç Sayısı -> "))
+# b = int(input("Bitiş Sayısı  -> "))
+# x = a
+# while x <= b :
+#   if x % 2 != 0 :
+#     print(x)
+#   x = x + 1
+# print("\nBitti")
+
+# 1 ve 100 arası sayıları
+# Tersten Yazdırmak
+# x = 11
+# while x > 1 :
+#   x = x - 1
+#   print(x)
+
+# Ekrana Beş Sayı Girilsin
+# Bunlar Sıra ile Yazılsın
+# x = 1
+# a =[]
+# while x <= 5 :
+#   b = int(input(f"{x}. Sayıyı Girin -> " ))
+#   a.append(b)
+#   x = x + 1
+# a.sort()
+# print("\nGirilen Sayıların Sıralaması :")
+# print("\n",a)
+# print("\n")
+
+#ur = [
+#   {'name':'samsung S6', 'price': '3000' },
+#   {'name':'samsung S7', 'price': '4000' },
+#   {'name':'samsung S8', 'price': '5000' },
+#   {'name':'samsung S9', 'price': '6000' },
+#   {'name':'samsung S10', 'price': '7000' }
+# ]
+# t = 0
+# for w in ur :
+#   t = t + int((w["price"]))
+# print(f"\n Ürün Fiyatları Toplamı : {t}")
+
+
+# for w in ur :
+#    if (int(w["price"])<=5000) :
+#      print("\n",w["name"])
+
+# ***********************
+# List - Dict. İç içe ***
+# x = 1
+# d = []
+# u = int(input("Kaç Adet Ürün Girilecek -> "))
+# while x <= u :
+#   a = input("\nÜrün İsmi Girin -> ")
+#   b = int(input(f"{a} İçin Fiyat Girin -> "))
+#   d.append({"İsim":a,"Fiyat":b})
+#   x = x + 1
+# for i in d :
+#   print(f"\nİsim : {i['İsim']} Fiyat : {i['Fiyat']} TL")
+# print("\n")
+# ***********************
+# v = "exaple"
+# for i in v :
+#   if i == "p" :
+#     continue
+#   print(f"\n'p' harfi atlandı {i}") 
+
+# x = 0
+# while x < 5 :
+#   x = x+1
+#   if x == 3 :
+#     break
+#   print(x)
+  
+# X - Y Arası Tek sayıların Toplamı
+
+# l = []
+# x = 1
+# while x < 10 :
+#     x = x + 1
+#     if x%2 != 0 :
+#         print(x)
+# # Toplamak İçin Listeye Atıldı
+#         l.append(x) 
+# print(l)
+# print(sum(l))
+
+#print(list(range(10)))
+
+# enumerate ***
+# s = "abcd"
+# for x,y in enumerate(s) :
+#   print(f"\nİndex : {x} , Harf : {y}")
+
+# random ***
+
+# for i in range(10) :
+#   print(f"\n{i}. Random : ",random.randint(1,100))
+
+
+# import random
+# th = int(input("Sayıyı Tahmin Edin -> "))
+# rn = (random.randint(1,100))
+
+****************************************************
+
+# random ***
+
+# for i in range(10) :
+#   print(f"\n{i}. Random : ",random.randint(1,100))
+
+import random
+rn = (random.randint(1,5))
+print(rn)
+print("\n")
+hak = 5
+puan = 0
+x = 1
+while x<hak :
+  sr = int(input("\nSayı Tahminizi Girin -> "))
+  if sr < rn :
+    print("\nYukarı")
+    x = x + 1
+    continue
+  elif sr > rn :
+    print("\nAşağı")
+    x = x + 1
+    continue
+  elif sr == rn :
+    print(f"\n{x}. Tahminde Bildiniz")
+    if x == 1 :
+      puan = puan + 20
+      print(f"\nPuanınız : {puan}")
+      break
+    else :
+      puan = (puan+20)-(x*hak)
+      print(f"\nPuanınız : {puan}")
+      break
+
+***************************************************
+import random
+rn = (random.randint(1,5))
+#print(rn) : doğrulama testi için
+print("\n")
+hak = 5
+puan = 0
+x = 1
+while x<hak :
+  sr = int(input("\nSayı Tahminizi Girin -> "))
+  if sr < rn :
+    print("\nYukarı")
+    x = x + 1
+    continue
+  elif sr > rn :
+    print("\nAşağı")
+    x = x + 1
+    continue
+  elif sr == rn :
+    print(f"\n{x}. Tahminde Bildiniz")
+    if x == 1 :
+      puan = puan + 20
+      print(f"\nPuanınız : {puan}")
+      break
+    else :
+      puan = (puan+20)-(x*hak)
+      print(f"\nPuanınız : {puan}")
+      break
+print("\n")      
+
+*********************************************
+
+
+     
+
+
+       
